@@ -1,0 +1,174 @@
+.section-book {
+  padding: 15rem 0;
+  margin: 0 auto;
+  width: 95%;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+}
+.book {
+  border-radius: 3px;
+  // background-image: linear-gradient(
+  //     to right bottom,
+  //     rgba($color-tertiary-light, 0.3),
+  //     rgba($color-primary, 0.3)
+  //   );
+  z-index: 100;
+  box-shadow: 0 1.5rem 4rem rgba($color-tertiary-dark, 0.22);
+
+  &-form {
+    width: 100%;
+    padding: 8rem;
+    @include respond(tab-land) {
+      // width: 65%;
+    }
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+}
+
+.form {
+  &-group {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  &-input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    text-transform: capitalize;
+    color: inherit;
+    width: 80%;
+    border: 1px solid rgba($color-black, 0.1);
+    padding: 1.5rem 3rem;
+    border-radius: 2px;
+    background-color: $color-white;
+
+    transition: all 0.3s;
+    @include respond(tab-port) {
+      width: 100%;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      background-color: rgba($color-white, 0.9);
+
+      border-bottom: 3px solid $color-tertiary-dark;
+      transform: translateY(-1rem);
+    }
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-1;
+      text-transform: capitalize;
+    }
+  }
+
+  &-label {
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 0.7rem;
+    display: block;
+  }
+  //we use + to select the sibling right next to input which in this case is label
+  //~ genreral sibling
+
+  //for the radio
+
+  &-radio {
+    &-input {
+      display: none;
+    }
+    &-group {
+      text-transform: capitalize;
+      width: 100%;
+      display: inline-block;
+      margin-bottom: 3rem;
+
+      @include respond(tab-port) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+    &-label {
+      font-size: $default-font-size;
+      cursor: pointer;
+      position: relative;
+      padding-left: 4.5rem;
+    }
+    &-button {
+      height: 3rem;
+      width: 3rem;
+      border: 5px solid $color-tertiary-dark;
+      display: inline-block;
+      border-radius: 50%;
+      position: absolute;
+      top: -0.4rem;
+      left: 0;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 1.3rem;
+        width: 1.3rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-tertiary-dark;
+        opacity: 0;
+        transform: all 0.2s;
+      }
+    }
+    &-input:checked ~ &-label &-button::after {
+      opacity: 1;
+    }
+  }
+}
+.grid {
+  gap: 4rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // align-items: center;
+  justify-content: space-between;
+
+  &-item {
+    width: 100%;
+  }
+  @include respond(tab-land) {
+    display: block;
+  }
+}
+.form-text {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  display: block;
+}
+.radio-flex {
+  display: flex;
+  gap: 8rem;
+}
+.form-btn {
+  display: flex;
+  gap: 8rem;
+
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}

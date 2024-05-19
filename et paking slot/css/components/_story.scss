@@ -1,0 +1,94 @@
+.section-story {
+  padding: 15rem;
+  background-color: $color-grey-light-1;
+  position: relative;
+  z-index: 10;
+  @include respond(tab-port) {
+    padding: 10rem;
+  }
+}
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.8);
+  border-radius: 3px;
+  padding: 3rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  display: flex;
+  gap: 3rem;
+  @include respond(tab-land) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  &-shape {
+    width: 15rem;
+    height: 15rem;
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  &-img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all 0.5s;
+    display: flex;
+  }
+
+  &-text {
+    // margin-left: 2rem;
+    width: 70%;
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+
+  &-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+
+  &:hover &-caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &-img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+}
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden;
+
+  &-content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

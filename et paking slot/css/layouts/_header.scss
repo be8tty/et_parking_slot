@@ -1,0 +1,64 @@
+.header {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-black, 0.8),
+      rgba($color-tertiary-dark, 0.8)
+    ),
+    url(../img/test2.jpeg);
+  background-size: cover;
+  background-position: top;
+  height: 85vh;
+
+  position: relative;
+
+  @supports (
+    clip-path: polygon(0 0) or
+      (
+        clip-path: polygon(0 0),
+      )
+  ) {
+    /* to clip out image you can use a website called clipy simple way to think  the numbers of this is reversed c */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    // -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 81%, 50% 100%, 0 81%);
+    // clip-path: polygon(0% 0%, 100% 0, 100% 81%, 50% 100%, 0 81%);
+    height: 95vh;
+  }
+
+  @include respond(phone) {
+  }
+
+  &--logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &--logo {
+    height: 3.5rem;
+  }
+  &--text-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+.car {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  font-weight: 100;
+  padding: 20px;
+  padding-left: 40px;
+  &-big {
+    width: 100px;
+    height: 100px;
+  }
+}
+.new {
+  display: flex;
+  justify-content: space-between;
+}

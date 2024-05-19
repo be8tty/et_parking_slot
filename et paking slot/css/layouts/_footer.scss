@@ -1,0 +1,104 @@
+.footer {
+  background-color: $color-grey-dark-2;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: $color-grey-light-1;
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
+  &-logo {
+    width: 15rem;
+    height: auto;
+  }
+  &-logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+  }
+  &-navigation {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    display: inline-block;
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &-list {
+    list-style: none;
+  }
+  &-item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+  &-link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-grey-light-1;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.3s;
+      background-color: $color-grey-dark-2;
+    }
+    &:hover,
+    &:active {
+      color: $color-tertiary-dark;
+      box-shadow: 0 1 rem 2rem rgba($color-black, 0.4);
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+  &-copyright {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    // display: inline-block;
+    // width: 80%;
+    // float: right;
+    @include respond(tab-port) {
+      // width: 100%;
+      // float: none;
+    }
+  }
+}
+.footer-icon {
+  display: flex;
+  gap: 5rem;
+  // margin-top: -4rem;
+}
+.footer-link-icon {
+  color: #fff;
+
+  font-size: 3rem;
+  margin-top: 2rem;
+  &:hover {
+    color: $color-tertiary-dark;
+  }
+}
+.footer-address {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+.footer-phone {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.footer-email {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  &:hover {
+    color: $color-tertiary-dark;
+  }
+}
